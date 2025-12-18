@@ -19,3 +19,14 @@ There are four main functions:
 - Utredningsbetänkande
 - Kommittédirektiv
 - Lag
+
+## Get started, detailed instructions
+
+- Install [uv](https://docs.astral.sh/uv/) to manage Python and the project's dependencies
+- Create a new Python environment, activate it and install the dependencies
+
+  ```shell
+  uv venv
+  source .venv/bin/activate
+  uv pip install .
+  ```
