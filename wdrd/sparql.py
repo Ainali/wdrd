@@ -13,9 +13,7 @@ def get_series_qid(session: str, doc_type: str) -> str:
         "SELECT ?item ?itemLabel WHERE {"
         "?item wdt:P17 wd:Q34 ;"
         f"wdt:P361 wd:{session_qid} ;"
-        "p:P31 ?st ."
-        "?st ps:P31 wd:Q3511132 ;"
-        f"pq:P642 wd:{doc_type_qid} ."
+        f"wdt:P2670 wd:{doc_type_qid} ."
         'SERVICE wikibase:label { bd:serviceParam wikibase:language "sv". }}'
     )
 
@@ -47,7 +45,7 @@ def get_series_docs(session: str, doc_type: str) -> pd.DataFrame:
 def get_people() -> pd.DataFrame:
     query = """SELECT ?item ?itemLabel ?code WHERE {
     ?item wdt:P1214 ?code .
-    
+
     SERVICE wikibase:label { bd:serviceParam wikibase:language "sv". }
     }"""
 
